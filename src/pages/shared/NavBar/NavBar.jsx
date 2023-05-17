@@ -1,24 +1,25 @@
 import React from "react";
 import logo from "../../../assets/images/toys.png";
+import ActiveRoutes from "../../../routes/ActiveRoutes/ActiveRoutes";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
 	const navLinks = (
 		<>
 			<li>
-				<Link to='/'>Home</Link>
+				<ActiveRoutes to='/'>Home</ActiveRoutes>
 			</li>
 			<li>
-				<Link to='/about'>All Toys</Link>
+				<ActiveRoutes to='/all'>All Toys</ActiveRoutes>
 			</li>
 			<li>
-				<Link to='/services'>My Toys</Link>
+				<ActiveRoutes to='/my'>My Toys</ActiveRoutes>
 			</li>
 			<li>
-				<Link to='/blogs'>Blogs</Link>
+				<ActiveRoutes to='/blogs'>Blogs</ActiveRoutes>
 			</li>
 			<li>
-				<Link to='/contact'>Add A Toy</Link>
+				<ActiveRoutes to='/add'>Add A Toy</ActiveRoutes>
 			</li>
 		</>
 	);
@@ -52,8 +53,9 @@ const NavBar = () => {
 				<Link to='/' className=' normal-case text-xl '>
 					<img src={logo} alt='' />
 				</Link>
-				<h2 className="lg:text-4xl ml-5 font-bold">
-					<span className="text-blue-500"> Toy </span> <span className="text-red-400">Sparkle</span>
+				<h2 className='lg:text-4xl ml-5 font-bold'>
+					<span className='text-blue-500'> Toy </span>{" "}
+					<span className='text-red-400'>Sparkle</span>
 				</h2>
 			</div>
 			<div className='navbar-center hidden lg:flex text-xl'>
