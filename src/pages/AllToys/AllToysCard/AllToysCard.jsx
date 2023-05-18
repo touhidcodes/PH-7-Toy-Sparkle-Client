@@ -1,10 +1,19 @@
 import React from "react";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { Link } from "react-router-dom";
 
 const AllToysCard = ({ toy }) => {
-	const { picture, toyName, price, quantity, rating, sellerName, category } =
-		toy;
+	const {
+		_id,
+		picture,
+		toyName,
+		price,
+		quantity,
+		rating,
+		sellerName,
+		category,
+	} = toy;
 	return (
 		<tr>
 			<th>
@@ -35,7 +44,9 @@ const AllToysCard = ({ toy }) => {
 				<p>Quantity: {quantity}</p>
 			</td>
 			<th>
-				<button className='btn btn-error text-white '>View Details</button>
+				<Link to={`details/${_id}`}>
+					<button className='btn btn-error text-white '>View Details</button>
+				</Link>
 			</th>
 		</tr>
 	);

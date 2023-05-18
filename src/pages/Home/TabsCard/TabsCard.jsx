@@ -4,7 +4,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
 const TabsCard = ({ car }) => {
-	const { picture, toyName, price, rating } = car;
+	const { _id, picture, toyName, price, rating } = car;
 	return (
 		<div className='card card-compact w-96 bg-base-100 shadow-xl'>
 			<figure>
@@ -19,10 +19,10 @@ const TabsCard = ({ car }) => {
 					Ratings: <span className='text-blue-400'>{rating}</span>
 				</p>
 				<div className='card-actions justify-between items-center'>
-					<div >
-						<Rating style={{ maxWidth: 100 }} value={rating} readOnly/>
+					<div>
+						<Rating style={{ maxWidth: 100 }} value={rating} readOnly />
 					</div>
-					<Link >
+					<Link to={`/details/${_id}`}>
 						<button className='btn btn-error text-white'>View Details</button>
 					</Link>
 				</div>
