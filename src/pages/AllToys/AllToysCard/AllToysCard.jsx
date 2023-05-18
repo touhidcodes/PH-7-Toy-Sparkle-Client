@@ -44,7 +44,7 @@ const AllToysCard = ({ toy }) => {
 				<p>Quantity: {quantity}</p>
 			</td>
 			<th>
-				<Link to={`details/${_id}`}>
+				<Link to={`/details/${_id}`}>
 					<button className='btn btn-error text-white '>View Details</button>
 				</Link>
 			</th>

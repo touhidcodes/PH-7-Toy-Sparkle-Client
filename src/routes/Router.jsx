@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home/Home/Home";
 import AllToys from "../pages/AllToys/AllToys/AllToys";
 import ToyDetails from "../pages/ToyDetails/ToyDetails";
+import AddToys from "../pages/AddToys/AddToys";
 
 const router = createBrowserRouter([
 	{
@@ -25,16 +26,16 @@ const router = createBrowserRouter([
 				loader: ({ params }) =>
 					fetch(`http://localhost:5000/details/${params.id}`),
 			},
+			{
+				path: "/add",
+				element: <AddToys />,
+			},
 			// {
 			// 	path: "/my",
 			// 	element: <Home />,
 			// },
 			// {
 			// 	path: "/blogs",
-			// 	element: <Home />,
-			// },
-			// {
-			// 	path: "/add",
 			// 	element: <Home />,
 			// },
 		],

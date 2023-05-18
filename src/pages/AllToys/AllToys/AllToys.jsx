@@ -6,7 +6,11 @@ const AllToys = () => {
 	const toys = useLoaderData();
 	return (
 		<div className='overflow-x-auto w-full mt-10'>
-			<table className='table w-full'>
+			<div className='text-center'>
+				<h1 className='text-3xl font-semibold'>All Toys</h1>
+				<p className='text-[#4acdd5] font-semibold mt-1'>View Toys</p>
+			</div>
+			<table className='table w-full mt-10'>
 				{/* head */}
 				<thead>
 					<tr>
