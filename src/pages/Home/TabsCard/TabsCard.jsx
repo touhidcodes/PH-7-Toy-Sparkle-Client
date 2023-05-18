@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 
 const TabsCard = ({ car }) => {
 	const { picture, toyName, price, rating } = car;
@@ -16,8 +18,11 @@ const TabsCard = ({ car }) => {
 				<p className='text-xl font-semibold'>
 					Ratings: <span className='text-blue-400'>{rating}</span>
 				</p>
-				<div className='card-actions justify-end'>
-					<Link>
+				<div className='card-actions justify-between items-center'>
+					<div >
+						<Rating style={{ maxWidth: 100 }} value={rating} readOnly/>
+					</div>
+					<Link >
 						<button className='btn btn-error text-white'>View Details</button>
 					</Link>
 				</div>
