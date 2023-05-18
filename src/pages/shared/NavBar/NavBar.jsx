@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../../assets/images/toys.png";
 import ActiveRoutes from "../../../routes/ActiveRoutes/ActiveRoutes";
 import { Link } from "react-router-dom";
+import { CiLogin } from "react-icons/ci";
 
 const NavBar = () => {
 	const navLinks = (
@@ -62,7 +63,9 @@ const NavBar = () => {
 				<ul className='menu menu-horizontal px-1'>{navLinks}</ul>
 			</div>
 			<div className='navbar-end'>
-				<a className='btn btn-error text-white'>Log In</a>
+				<Link to='/login' className='btn btn-error text-white'>
+					Log In<CiLogin className='h-8 w-8 ml-1' />
+				</Link>
 			</div>
 		</div>
 	);
