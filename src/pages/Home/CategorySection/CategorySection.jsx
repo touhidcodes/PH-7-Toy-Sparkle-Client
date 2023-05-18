@@ -10,6 +10,10 @@ const CategorySection = ({ toys }) => {
 
 	return (
 		<div className='mt-20'>
+			<div className='text-center mb-5'>
+				<h1 className='text-3xl font-semibold'>Shop Toys By Category</h1>
+				<p className='text-[#4acdd5] font-semibold mt-1'>Category of Car Toys</p>
+			</div>
 			<Tabs>
 				<TabList>
 					<Tab>
@@ -24,20 +28,29 @@ const CategorySection = ({ toys }) => {
 						<h4 className='text-2xl font-semibold text-[#4acdd5]'>Truck</h4>
 					</Tab>
 				</TabList>
-
-				<TabPanel>
-					<div className="grid grid-cols-3 gap-10 p-10">
-						{regularCarData.slice(0, 3).map((car) => (
-							<TabsCard key={car._id} car={car} />
-						))}
-					</div>
-				</TabPanel>
-				<TabPanel>
-					<h2>Any content 2</h2>
-				</TabPanel>
-				<TabPanel>
-					<h2>Any content 3</h2>
-				</TabPanel>
+				<div className='bg-base-200 rounded-xl'>
+					<TabPanel>
+						<div className='grid grid-cols-3 gap-5 p-10'>
+							{regularCarData.slice(0, 3).map((car) => (
+								<TabsCard key={car._id} car={car} />
+							))}
+						</div>
+					</TabPanel>
+					<TabPanel>
+						<div className='grid grid-cols-3 gap-5 p-10'>
+							{sportsCarData.slice(0, 3).map((car) => (
+								<TabsCard key={car._id} car={car} />
+							))}
+						</div>
+					</TabPanel>
+					<TabPanel>
+						<div className='grid grid-cols-3 gap-5 p-10'>
+							{trucksData.slice(0, 3).map((car) => (
+								<TabsCard key={car._id} car={car} />
+							))}
+						</div>
+					</TabPanel>
+				</div>
 			</Tabs>
 		</div>
 	);
