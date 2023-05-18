@@ -61,8 +61,8 @@ const Footer = () => {
 			<div className='footer footer-center p-4 bg-[#4acdd5] text-white text-xl rounded-b-lg'>
 				<div>
 					<p>
-						Copyright © 2023 | All right reserved by TouhidCodes | Built Toy
-						Sprinkle by Touhid
+						All right reserved at TouhidCodes | Built Toy Sprinkle by Touhid |
+						Copyright © 2023
 					</p>
 				</div>
 			</div>
