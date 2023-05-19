@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../../assets/images/toys.png";
 import ActiveRoutes from "../../../routes/ActiveRoutes/ActiveRoutes";
 import { Link } from "react-router-dom";
-import { CiLogin } from "react-icons/ci";
+import { AuthContext } from "../../../context/AuthProvider";
 
 const NavBar = () => {
+	const { user, logOut } = useContext(AuthContext);
+
+	const handleLogOut = () => {
+		logOut()
+			.then(() => {})
+			.catch((error) => {});
+		console.log(user);
+	};
+
 	const navLinks = (
 		<>
 			<li>
@@ -63,9 +72,35 @@ const NavBar = () => {
 				<ul className='menu menu-horizontal px-1'>{navLinks}</ul>
 			</div>
 			<div className='navbar-end'>
-				<Link to='/login' className='btn btn-error text-white'>
-					Log In<CiLogin className='h-8 w-8 ml-1' />
-				</Link>
+				<div className='dropdown dropdown-end mr-5'>
+					{user ? (
+						<label
+							tabIndex={0}
+							className='btn btn-ghost btn-circle avatar placeholder'
+						>
+							<div className=' rounded-full ring ring-red-400 ring-offset-base-100 ring-offset-2 w-10'>
+								<div>
+									<img src={user?.photoURL} title={user?.displayName} />
+								</div>
+							</div>
+						</label>
+					) : (
+						""
+					)}
+				</div>
+				{user ? (
+					<div>
+						<button className='btn btn-error text-white' onClick={handleLogOut}>
+							Log Out
+						</button>
+					</div>
+				) : (
+					<button>
+						<Link to='/login' className='btn btn-error text-white'>
+							Log In
+						</Link>
+					</button>
+				)}
 			</div>
 		</div>
 	);

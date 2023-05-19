@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-	const { createUser, auth, user } = useContext(AuthContext);
+	const { createUser, user } = useContext(AuthContext);
 	const [error, setError] = useState("");
 	const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ const Register = () => {
 				});
 				updateUser(user, name, url);
 				navigate("/");
-				console.log(user);
+				// console.log(user);
 			})
 			.catch((error) => {
 				const errorMessage = error.message;
