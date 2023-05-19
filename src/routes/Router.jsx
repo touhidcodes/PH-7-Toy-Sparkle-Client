@@ -7,6 +7,8 @@ import AddToys from "../pages/AddToys/AddToys";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Private from "./Private/Private";
+import Error from "../pages/Error/Error";
+import MyToys from "../pages/MyToys/MyToys/MyToys";
 
 const router = createBrowserRouter([
 	{
@@ -41,10 +43,14 @@ const router = createBrowserRouter([
 					</Private>
 				),
 			},
-			// {
-			// 	path: "/my",
-			// 	element: <Home />,
-			// },
+			{
+				path: "/my",
+				element: (
+					<Private>
+						<MyToys />
+					</Private>
+				),
+			},
 			// {
 			// 	path: "/blogs",
 			// 	element: <Home />,
@@ -58,6 +64,10 @@ const router = createBrowserRouter([
 				element: <Register />,
 			},
 		],
+	},
+	{
+		path: "*",
+		element: <Error />,
 	},
 ]);
 
