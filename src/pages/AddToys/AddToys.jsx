@@ -27,7 +27,18 @@ const AddToys = () => {
 			quantity,
 			description,
 		};
-		console.log(toy);
+
+		fetch("http://localhost:5000/add", {
+			method: "POST",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(toy),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+			});
 	};
 	return (
 		<div className='mt-10 mb-10'>

@@ -11,7 +11,7 @@ const TabsCard = ({ car }) => {
 	const handleDetails = () => {
 		Swal.fire({
 			title: "Are you sure?",
-			text: "You have to login first to visit this!",
+			text: "You have to log in first to view details!",
 			icon: "warning",
 			showCancelButton: true,
 			confirmButtonColor: "#3085d6",
