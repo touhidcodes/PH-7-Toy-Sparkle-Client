@@ -1,18 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 
 const Register = () => {
-    const {createUser } = useContext(AuthContext)
+	const { createUser } = useContext(AuthContext);
+	const [success, setSuccess] = useState("");
+	const [error, setError] = useState("");
+
 	const handleSubmit = (event) => {
+		setError("");
 		event.preventDefault();
 		const form = event.target;
 		const name = form.name.value;
 		const email = form.email.value;
 		const password = form.password.value;
 		const url = form.url.value;
-		
 
+		createUser(email, password)
+			.then((result) => {
+				const user = result.user;
+				form.reset()
+			})
+			.catch((error) => {
+				const errorMessage = error.message;
+				setError(errorMessage);
+			});
 	};
 	return (
 		<div className='mt-10'>
@@ -20,6 +32,7 @@ const Register = () => {
 				<h1 className='text-3xl font-semibold'>Register Your Account</h1>
 				<p className='text-[#4acdd5] font-semibold mt-1'>Register</p>
 			</div>
+
 			<div className='w-1/2 mx-auto mt-5'>
 				<div className=' card  p-10 rounded-xl shadow-2xl bg-base-100'>
 					<div className='card-body border-dashed border-2 border-[#4acdd5]'>
@@ -90,6 +103,13 @@ const Register = () => {
 								className='form-control mt-4 btn btn-error text-white w-full'
 							/>
 						</form>
+						{error ? (
+							<div className='text-center font-semibold text-red-400 mt-5'>
+								<p>{error}</p>
+							</div>
+						) : (
+							""
+						)}
 						<div>
 							<p className='font-semibold mt-3 text-center'>
 								<small>
