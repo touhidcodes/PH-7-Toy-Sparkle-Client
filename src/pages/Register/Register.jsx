@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
+import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-	const { createUser } = useContext(AuthContext);
-	const [success, setSuccess] = useState("");
+	const { createUser, auth, user } = useContext(AuthContext);
 	const [error, setError] = useState("");
+	const navigate = useNavigate();
 
 	const handleSubmit = (event) => {
 		setError("");
@@ -19,12 +21,31 @@ const Register = () => {
 		createUser(email, password)
 			.then((result) => {
 				const user = result.user;
-				form.reset()
+				form.reset();
+				Swal.fire({
+					icon: "success",
+					title: "Success...",
+					text: "User has been created successfully!",
+				});
+				updateUser(user, name, url);
+				navigate("/");
+				console.log(user);
 			})
 			.catch((error) => {
 				const errorMessage = error.message;
 				setError(errorMessage);
 			});
+
+		const updateUser = (user, name, url) => {
+			updateProfile(user, {
+				displayName: name,
+				photoURL: url,
+			})
+				.then(() => {})
+				.catch((error) => {
+					setError(error.message);
+				});
+		};
 	};
 	return (
 		<div className='mt-10'>
