@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 
 const Login = () => {
-	const { signInUser } = useContext(AuthContext);
+	const { signInUser, googleSignIn } = useContext(AuthContext);
 	const [error, setError] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
 	const location = useLocation();
@@ -25,6 +25,20 @@ const Login = () => {
 			})
 			.catch((error) => {
 				const errorMessage = error.message;
+				setError(errorMessage);
+			});
+	};
+	const handleGoogleSignIn = () => {
+		googleSignIn()
+			.then((result) => {
+				const credential = GoogleAuthProvider.credentialFromResult(result);
+				const token = credential.accessToken;
+				const user = result.user;
+			})
+			.catch((error) => {
+				const errorMessage = error.message;
+				const email = error.customData.email;
+				const credential = GoogleAuthProvider.credentialFromError(error);
 				setError(errorMessage);
 			});
 	};
@@ -91,7 +105,10 @@ const Login = () => {
 						</form>
 						<div className='divider'>OR</div>
 						<div className='form-control'>
-							<button className='btn btn-info text-white'>
+							<button
+								className='btn btn-info text-white'
+								onClick={handleGoogleSignIn}
+							>
 								<FcGoogle className='h-8 w-8 mr-3' />
 								Google Sign In
 							</button>
