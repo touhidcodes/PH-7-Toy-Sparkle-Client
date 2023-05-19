@@ -1,8 +1,7 @@
 import { Rating } from "@smastrom/react-rating";
 import React from "react";
-import { Link } from "react-router-dom";
 
-const MyToysCard = ({ toy }) => {
+const MyToysCard = ({ toy, handleUpdate }) => {
 	const {
 		_id,
 		picture,
@@ -13,7 +12,8 @@ const MyToysCard = ({ toy }) => {
 		sellerName,
 		category,
 	} = toy;
-	console.log(toy);
+
+	
 	return (
 		<tr>
 			<td>
@@ -39,7 +39,12 @@ const MyToysCard = ({ toy }) => {
 				<p>Quantity: {quantity}</p>
 			</td>
 			<th>
-				<button className='btn btn-info text-white '>Update</button>
+				<button
+					className='btn btn-info text-white '
+					onClick={() => handleUpdate(_id)}
+				>
+					Update
+				</button>
 			</th>
 			<th>
 				<button className='btn btn-error text-white '>Delete</button>
