@@ -9,6 +9,7 @@ import Register from "../pages/Register/Register";
 import Private from "./Private/Private";
 import Error from "../pages/Error/Error";
 import MyToys from "../pages/MyToys/MyToys/MyToys";
+import Blogs from "../pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
 	{
@@ -57,10 +58,10 @@ const router = createBrowserRouter([
 					</Private>
 				),
 			},
-			// {
-			// 	path: "/blogs",
-			// 	element: <Home />,
-			// },
+			{
+				path: "/blogs",
+				element: <Blogs />,
+			},
 			{
 				path: "/login",
 				element: <Login />,
