@@ -5,9 +5,11 @@ import CategorySection from "../CategorySection/CategorySection";
 import { useLoaderData } from "react-router-dom";
 import Featured from "../Featured/Featured";
 import Review from "../Review/Review";
+import useTitle from "../../../hooks/useTitle";
 
 const Home = () => {
 	const toys = useLoaderData();
+	useTitle("Home")
 	return (
 		<div>
 			<Banner />

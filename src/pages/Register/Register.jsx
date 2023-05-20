@@ -3,11 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
 	const { createUser, user } = useContext(AuthContext);
 	const [error, setError] = useState("");
 	const navigate = useNavigate();
+	useTitle("Register");
 
 	const handleSubmit = (event) => {
 		setError("");

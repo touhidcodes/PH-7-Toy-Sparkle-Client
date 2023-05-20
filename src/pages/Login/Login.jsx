@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
 	const { signInUser, googleSignIn } = useContext(AuthContext);
@@ -10,6 +11,7 @@ const Login = () => {
 	const location = useLocation();
 	const navigate = useNavigate();
 	const from = location.state?.from?.pathname || "/";
+	useTitle("Login")
 
 	const handleLogin = (event) => {
 		event.preventDefault();
