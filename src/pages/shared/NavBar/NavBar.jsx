@@ -21,15 +21,19 @@ const NavBar = () => {
 			<li>
 				<ActiveRoutes to='/all'>All Toys</ActiveRoutes>
 			</li>
-			<li>
-				<ActiveRoutes to='/my'>My Toys</ActiveRoutes>
-			</li>
+			{user && (
+				<li>
+					<ActiveRoutes to='/my'>My Toys</ActiveRoutes>
+				</li>
+			)}
 			<li>
 				<ActiveRoutes to='/blogs'>Blogs</ActiveRoutes>
 			</li>
-			<li>
-				<ActiveRoutes to='/add'>Add A Toy</ActiveRoutes>
-			</li>
+			{user && (
+				<li>
+					<ActiveRoutes to='/add'>Add A Toy</ActiveRoutes>
+				</li>
+			)}
 		</>
 	);
 	return (
