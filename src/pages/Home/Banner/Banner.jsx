@@ -10,11 +10,10 @@ const Banner = () => {
 			<div id='slide1' className='carousel-item relative w-full '>
 				<img src={banner3} className='w-full' />
 				<div className='absolute flex items-center rounded-xl bg-gradient-to-r from-sky-300 to-[rgba(21, 21, 21, 0)] h-full w-full'>
-					<div className='text-white ml-20 '>
-						<h4 className=' text-4xl font-semibold bg-yellow-400 w-56 p-4'>
+					<div className='text-white lg:ml-20 p-8 lg:p-0'>
+						<h4 className=' text-4xl font-semibold bg-yellow-400 lg:w-56 p-4 text-center w-fit'>
 							New Arrival
 						</h4>
-
 						<p className='text-5xl font-bold text-black mt-8 mb-7 '>
 							New Toys for Kids
 						</p>
@@ -29,9 +28,9 @@ const Banner = () => {
 							</button>
 						</div>
 					</div>
-					<div className='absolute flex justify-end bottom-5 m-10   right-10 '>
+					<div className='absolute flex justify-end bottom-5 lg:m-10  right-10'>
 						<a
-							href='#slide4'
+							href='#slide3'
 							className='btn btn-circle mr-10 bg-red-400 hover:bg-yellow-400 border-none'
 						>
 							❮
@@ -48,8 +47,8 @@ const Banner = () => {
 			<div id='slide2' className='carousel-item relative w-full'>
 				<img src={banner2} className='w-full' />
 				<div className='absolute flex items-center rounded-xl bg-gradient-to-r from-sky-300 to-[rgba(21, 21, 21, 0)] h-full w-full'>
-					<div className='text-white ml-20 '>
-						<h4 className=' text-4xl font-semibold bg-yellow-400 w-56 p-4'>
+					<div className='text-white lg:ml-20 p-8 lg:p-0 '>
+						<h4 className=' text-4xl font-semibold bg-yellow-400 lg:w-56 p-4 text-center w-fit'>
 							New Arrival
 						</h4>
 
@@ -67,7 +66,7 @@ const Banner = () => {
 							</button>
 						</div>
 					</div>
-					<div className='absolute flex justify-end bottom-5 m-10   right-10 '>
+					<div className='absolute flex justify-end bottom-5 lg:m-10   right-10 '>
 						<a
 							href='#slide1'
 							className='btn btn-circle mr-10 bg-red-400 hover:bg-yellow-400 border-none'
@@ -86,8 +85,8 @@ const Banner = () => {
 			<div id='slide3' className='carousel-item relative w-full'>
 				<img src={banner1} className='w-full' />
 				<div className='absolute flex items-center rounded-xl bg-gradient-to-r from-sky-300 to-[rgba(21, 21, 21, 0)] h-full w-full'>
-					<div className='text-white ml-20 '>
-						<h4 className=' text-4xl font-semibold bg-yellow-400 w-56 p-4'>
+					<div className='text-white lg:ml-20 p-8 lg:p-0 '>
+						<h4 className=' text-4xl font-semibold bg-yellow-400 lg:w-56 p-4 text-center w-fit'>
 							New Arrival
 						</h4>
 
@@ -105,7 +104,7 @@ const Banner = () => {
 							</button>
 						</div>
 					</div>
-					<div className='absolute flex justify-end bottom-5 m-10   right-10 '>
+					<div className='absolute flex justify-end bottom-5 lg:m-10   right-10 '>
 						<a
 							href='#slide2'
 							className='btn btn-circle mr-10 bg-red-400 hover:bg-yellow-400 border-none'
