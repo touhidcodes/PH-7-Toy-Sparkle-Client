@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import GallerySection from "../GallerySection/GallerySection";
 import CategorySection from "../CategorySection/CategorySection";
 import { useLoaderData } from "react-router-dom";
+import Featured from "../Featured/Featured";
 
 const Home = () => {
 	const toys = useLoaderData();
@@ -10,7 +11,8 @@ const Home = () => {
 		<div>
 			<Banner />
 			<GallerySection />
-			<CategorySection toys={toys}/>
+			<CategorySection toys={toys} />
+			<Featured />
 		</div>
 	);
 };
