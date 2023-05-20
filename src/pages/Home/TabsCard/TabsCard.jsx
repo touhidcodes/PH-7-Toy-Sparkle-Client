@@ -4,6 +4,9 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../context/AuthProvider";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const TabsCard = ({ car }) => {
 	const { user } = useContext(AuthContext);
@@ -30,7 +33,11 @@ const TabsCard = ({ car }) => {
 		}
 	};
 	return (
-		<div className='card card-compact lg:w-96 bg-base-100 shadow-xl'>
+		<div
+			className='card card-compact lg:w-96 bg-base-100 shadow-xl'
+			data-aos='zoom-in'
+			data-aos-duration='1000'
+		>
 			<figure>
 				<img src={picture} alt='car toy' />
 			</figure>

@@ -3,6 +3,9 @@ import avatar1 from "../../../assets/images/Avatar/avatar-1.jpg";
 import avatar2 from "../../../assets/images/Avatar/avatar-2.jpg";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Review = () => {
 	return (
@@ -14,7 +17,11 @@ const Review = () => {
 				</p>
 			</div>
 			<div className='mt-10 grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-4 p-4 lg:p-0'>
-				<div className='bg-base-200 rounded-xl lg:p-10 p-5 '>
+				<div
+					className='bg-base-200 rounded-xl lg:p-10 p-5 '
+					data-aos='fade-right'
+					data-aos-duration='1000'
+				>
 					<div className='  flex flex-row items-center  '>
 						<div className='avatar'>
 							<div className='w-24 rounded-full'>
@@ -33,7 +40,11 @@ const Review = () => {
 						provident deleniti neque.
 					</p>
 				</div>
-				<div className='bg-base-200 rounded-xl lg:p-10 p-4 '>
+				<div
+					className='bg-base-200 rounded-xl lg:p-10 p-4 '
+					data-aos='fade-left'
+					data-aos-duration='1000'
+				>
 					<div className='  flex flex-row items-center  '>
 						<div className='avatar'>
 							<div className='w-24 rounded-full'>

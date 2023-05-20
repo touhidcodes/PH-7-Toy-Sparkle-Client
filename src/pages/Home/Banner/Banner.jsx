@@ -3,10 +3,17 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import banner1 from "../../../assets//images/Banner/banner_1.jpg";
 import banner2 from "../../../assets//images/Banner/banner_2.jpg";
 import banner3 from "../../../assets//images/Banner/banner_3.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Banner = () => {
 	return (
-		<div className='carousel w-full h-[600px] rounded-xl mt-10'>
+		<div
+			className='carousel w-full h-[600px] rounded-xl mt-10'
+			data-aos='zoom-in'
+			data-aos-duration='1000'
+		>
 			<div id='slide1' className='carousel-item relative w-full '>
 				<img src={banner3} className='w-full' />
 				<div className='absolute flex items-center rounded-xl bg-gradient-to-r from-sky-300 to-[rgba(21, 21, 21, 0)] h-full w-full'>
@@ -22,7 +29,7 @@ const Banner = () => {
 							for new users
 						</p>
 						<div className='mt-8'>
-							<button className='flex items-center btn btn-error text-xl text-white hover:bg-yellow-400 border-none'>
+							<button className='flex items-center btn btn-error text-xl text-white hover:bg-yellow-400 border-none rounded-full'>
 								Shop Now{" "}
 								<BsFillArrowRightCircleFill className='h-6 w-6 ml-3 text-white' />
 							</button>
@@ -60,7 +67,7 @@ const Banner = () => {
 							for new users
 						</p>
 						<div className='mt-8'>
-							<button className='flex items-center btn btn-error text-xl text-white hover:bg-yellow-400 border-none'>
+							<button className='flex items-center btn btn-error text-xl text-white hover:bg-yellow-400 border-none rounded-full'>
 								Shop Now{" "}
 								<BsFillArrowRightCircleFill className='h-6 w-6 ml-3 text-white' />
 							</button>
@@ -98,7 +105,7 @@ const Banner = () => {
 							for new users
 						</p>
 						<div className='mt-8'>
-							<button className='flex items-center btn btn-error text-xl text-white hover:bg-yellow-400 border-none'>
+							<button className='flex items-center btn btn-error text-xl text-white hover:bg-yellow-400 border-none rounded-full'>
 								Shop Now{" "}
 								<BsFillArrowRightCircleFill className='h-6 w-6 ml-3 text-white' />
 							</button>
