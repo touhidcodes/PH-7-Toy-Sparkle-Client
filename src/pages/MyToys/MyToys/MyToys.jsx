@@ -53,12 +53,29 @@ const MyToys = () => {
 			})
 				.then((res) => res.json())
 				.then((data) => {
-					fetch(url)
-						.then((res) => res.json())
-						.then((data) => setMyToys(data));
+					if (data.modifiedCount > 0) {
+						fetch(url)
+							.then((res) => res.json())
+							.then((data) => setMyToys(data));
+					}
 				});
 			Swal.fire("Success", "Toy information updated successfully!", "success");
 		}
+	};
+
+	const handleDelete = (id) => {
+		fetch(`http://localhost:5000/my/${id}`, {
+			method: "DELETE",
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.deletedCount > 0) {
+					fetch(url)
+						.then((res) => res.json())
+						.then((data) => setMyToys(data));
+				}
+			});
+		Swal.fire("Success", "Toy deleted successfully!", "success");
 	};
 	return (
 		<div className='overflow-x-auto w-full mt-10'>
@@ -79,7 +96,12 @@ const MyToys = () => {
 				</thead>
 				<tbody>
 					{myToys.map((toy) => (
-						<MyToysCard key={toy._id} toy={toy} handleUpdate={handleUpdate} />
+						<MyToysCard
+							key={toy._id}
+							toy={toy}
+							handleUpdate={handleUpdate}
+							handleDelete={handleDelete}
+						/>
 					))}
 				</tbody>
 			</table>

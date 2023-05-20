@@ -1,7 +1,7 @@
 import { Rating } from "@smastrom/react-rating";
 import React from "react";
 
-const MyToysCard = ({ toy, handleUpdate }) => {
+const MyToysCard = ({ toy, handleUpdate, handleDelete }) => {
 	const {
 		_id,
 		picture,
@@ -47,7 +47,12 @@ const MyToysCard = ({ toy, handleUpdate }) => {
 				</button>
 			</th>
 			<th>
-				<button className='btn btn-error text-white '>Delete</button>
+				<button
+					className='btn btn-error text-white '
+					onClick={() => handleDelete(_id)}
+				>
+					Delete
+				</button>
 			</th>
 		</tr>
 	);
