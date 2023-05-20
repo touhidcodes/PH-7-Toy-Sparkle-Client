@@ -11,7 +11,7 @@ const GallerySection = () => {
 				<h1 className='text-3xl font-semibold'>Recent Photoshoots</h1>
 				<p className='text-[#4acdd5] font-semibold mt-1'>Check Gallery</p>
 			</div>
-			<div className='grid grid-cols-4 gap-10 mt-10 items-center'>
+			<div className='grid grid-cols-1 lg:grid-cols-4 gap-10 mt-10 px-4 lg:px-0 items-center'>
 				<div className=''>
 					<img src={img1} alt='' className='rounded-xl w-full h-72' />
 				</div>

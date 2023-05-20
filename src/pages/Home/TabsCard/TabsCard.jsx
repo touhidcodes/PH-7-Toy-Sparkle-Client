@@ -30,7 +30,7 @@ const TabsCard = ({ car }) => {
 		}
 	};
 	return (
-		<div className='card card-compact w-96 bg-base-100 shadow-xl'>
+		<div className='card card-compact lg:w-96 bg-base-100 shadow-xl'>
 			<figure>
 				<img src={picture} alt='car toy' />
 			</figure>

@@ -6,13 +6,13 @@ import { HiPhone } from "react-icons/hi";
 
 const Footer = () => {
 	return (
-		<footer className='mt-10 mb-5'>
-			<div className='footer p-10 bg-base-200 text-base-content rounded-t-xl'>
-				<div>
-					<div className='flex items-center'>
+		<footer className='mt-10 lg:mb-5'>
+			<div className='footer p-10  bg-base-200 text-base-content rounded-t-xl items-center'>
+				<div >
+					<div className='flex items-center flex-col lg:flex-row'>
 						<img src={logo} alt='toy' className='' />
 						<div className='ml-5'>
-							<h2 className='lg:text-4xl ml-5 font-bold'>
+							<h2 className='text-4xl ml-5 font-bold text-center mt-5'>
 								<span className='text-blue-500'> Toy </span>{" "}
 								<span className='text-red-400'>Sparkle</span>
 							</h2>
@@ -23,19 +23,20 @@ const Footer = () => {
 						</div>
 					</div>
 
-					<p className='flex ml-5 items-center font-semibold mt-8'>
+					<p className='flex lg:ml-5 items-center font-semibold mt-8'>
 						<FaRegAddressBook className='h-5 w-5  text-red-400 mr-3' />
 						Address: 1800 Abbot Kinney Nebraska UK
 					</p>
-					<p className='flex ml-5 items-center font-semibold'>
+					<p className='flex lg:ml-5 items-center font-semibold'>
 						<MdAlternateEmail className='h-5 w-5  text-red-400 mr-3' />
 						Email: hello@example.com
 					</p>
-					<p className='flex ml-5 items-center font-semibold'>
+					<p className='flex lg:ml-5 items-center font-semibold'>
 						<HiPhone className='h-5 w-5  text-red-400 mr-3' />
 						Phone:(012) 345 6789
 					</p>
 				</div>
+
 				<div className='font-semibold'>
 					<span className='footer-title'>Quick Links</span>
 					<a className='link link-hover'>Help Center</a>
@@ -58,7 +59,7 @@ const Footer = () => {
 					<a className='link link-hover'>Instagram</a>
 				</div>
 			</div>
-			<div className='footer footer-center p-4 bg-[#4acdd5] text-white text-xl rounded-b-lg'>
+			<div className='footer footer-center p-4 bg-[#4acdd5] text-white lg:text-xl rounded-b-lg'>
 				<div>
 					<p>
 						All right reserved at TouhidCodes | Built Toy Sprinkle by Touhid |
