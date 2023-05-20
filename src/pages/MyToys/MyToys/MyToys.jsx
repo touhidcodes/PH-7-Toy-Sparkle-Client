@@ -64,18 +64,32 @@ const MyToys = () => {
 	};
 
 	const handleDelete = (id) => {
-		fetch(`http://localhost:5000/my/${id}`, {
-			method: "DELETE",
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				if (data.deletedCount > 0) {
-					fetch(url)
-						.then((res) => res.json())
-						.then((data) => setMyToys(data));
-				}
-			});
-		Swal.fire("Success", "Toy deleted successfully!", "success");
+		Swal.fire({
+			title: "Are you sure?",
+			text: "You won't be able to revert this!",
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#3085d6",
+			cancelButtonColor: "#d33",
+			confirmButtonText: "Yes, delete it!",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				fetch(`http://localhost:5000/my/${id}`, {
+					method: "DELETE",
+				})
+					.then((res) => res.json())
+					.then((data) => {
+						if (data.deletedCount > 0) {
+							fetch(url)
+								.then((res) => res.json())
+								.then((data) => setMyToys(data));
+							Swal.fire("Deleted!", "Your toy has been deleted.", "success");
+						}
+					});
+			}
+		});
+
+		
 	};
 	return (
 		<div className='overflow-x-auto w-full mt-10'>
@@ -86,7 +100,7 @@ const MyToys = () => {
 			<table className='table w-full mt-10'>
 				<thead>
 					<tr>
-						<th>Toy Name</th>
+						<th>Toy Name & Image</th>
 						<th>Seller</th>
 						<th>Sub_category</th>
 						<th>Price & Quantity</th>
