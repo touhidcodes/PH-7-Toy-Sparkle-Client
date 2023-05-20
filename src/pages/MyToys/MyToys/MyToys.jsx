@@ -88,8 +88,14 @@ const MyToys = () => {
 					});
 			}
 		});
+	};
 
-		
+	const handleSort = (event) => {
+		fetch(
+			`http://localhost:5000/sort?by=${event.target.value}&email=${user.email}`
+		)
+			.then((res) => res.json())
+			.then((data) => setMyToys(data));
 	};
 	return (
 		<div className='overflow-x-auto w-full mt-10'>
@@ -97,6 +103,16 @@ const MyToys = () => {
 				<h1 className='text-3xl font-semibold'>My Toys</h1>
 				<p className='text-[#4acdd5] font-semibold mt-1'>{user.email}</p>
 			</div>
+			<select
+				className='select select-bordered w-full max-w-xs'
+				onChange={handleSort}
+			>
+				<option selected disabled>
+					Sort by Price
+				</option>
+				<option value='ascending'>Ascending</option>
+				<option value='descending'>Descending</option>
+			</select>
 			<table className='table w-full mt-10'>
 				<thead>
 					<tr>
