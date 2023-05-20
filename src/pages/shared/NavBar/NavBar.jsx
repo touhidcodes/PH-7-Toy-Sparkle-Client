@@ -11,7 +11,6 @@ const NavBar = () => {
 		logOut()
 			.then(() => {})
 			.catch((error) => {});
-		console.log(user);
 	};
 
 	const navLinks = (

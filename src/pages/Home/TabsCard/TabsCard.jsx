@@ -1,27 +1,33 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../../context/AuthProvider";
 
 const TabsCard = ({ car }) => {
+	const { user } = useContext(AuthContext);
 	const { _id, picture, toyName, price, rating } = car;
 	const navigate = useNavigate();
 
 	const handleDetails = () => {
-		Swal.fire({
-			title: "Are you sure?",
-			text: "You have to log in first to view details!",
-			icon: "warning",
-			showCancelButton: true,
-			confirmButtonColor: "#3085d6",
-			cancelButtonColor: "#d33",
-			confirmButtonText: "Log In",
-		}).then((result) => {
-			if (result.isConfirmed) {
-				Swal.fire(navigate(`/details/${_id}`));
-			}
-		});
+		if (!user) {
+			Swal.fire({
+				title: "Are you sure?",
+				text: "You have to log in first to view details!",
+				icon: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#3085d6",
+				cancelButtonColor: "#d33",
+				confirmButtonText: "Log In",
+			}).then((result) => {
+				if (result.isConfirmed) {
+					navigate(`/details/${_id}`);
+				}
+			});
+		} else {
+			navigate(`/details/${_id}`);
+		}
 	};
 	return (
 		<div className='card card-compact w-96 bg-base-100 shadow-xl'>

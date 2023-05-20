@@ -13,7 +13,7 @@ const AllToys = () => {
 		const data = { name };
 		console.log(data);
 
-		const url = `http://localhost:5000/search?search=${name}`;
+		const url = `https://ph-7-assignment-11-toy-sparkle-server.vercel.app/search?search=${name}`;
 		fetch(url)
 			.then((res) => res.json(data))
 			.then((data) => setToys(data));

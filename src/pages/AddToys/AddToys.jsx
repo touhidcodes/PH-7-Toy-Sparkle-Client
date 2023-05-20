@@ -29,7 +29,7 @@ const AddToys = () => {
 			description,
 		};
 
-		fetch("http://localhost:5000/add", {
+		fetch("https://ph-7-assignment-11-toy-sparkle-server.vercel.app/add", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

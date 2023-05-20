@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const MyToys = () => {
 	const { user } = useContext(AuthContext);
 	const [myToys, setMyToys] = useState([]);
-	const url = `http://localhost:5000/my?email=${user.email}`;
+	const url = `https://ph-7-assignment-11-toy-sparkle-server.vercel.app/my?email=${user.email}`;
 
 	useEffect(() => {
 		fetch(url)
@@ -44,13 +44,16 @@ const MyToys = () => {
 				description: formValues[2],
 			};
 
-			fetch(`http://localhost:5000/my/${id}`, {
-				method: "PATCH",
-				headers: {
-					"content-type": "application/json",
-				},
-				body: JSON.stringify(updatedData),
-			})
+			fetch(
+				`https://ph-7-assignment-11-toy-sparkle-server.vercel.app/my/${id}`,
+				{
+					method: "PATCH",
+					headers: {
+						"content-type": "application/json",
+					},
+					body: JSON.stringify(updatedData),
+				}
+			)
 				.then((res) => res.json())
 				.then((data) => {
 					if (data.modifiedCount > 0) {
@@ -74,9 +77,12 @@ const MyToys = () => {
 			confirmButtonText: "Yes, delete it!",
 		}).then((result) => {
 			if (result.isConfirmed) {
-				fetch(`http://localhost:5000/my/${id}`, {
-					method: "DELETE",
-				})
+				fetch(
+					`https://ph-7-assignment-11-toy-sparkle-server.vercel.app/my/${id}`,
+					{
+						method: "DELETE",
+					}
+				)
 					.then((res) => res.json())
 					.then((data) => {
 						if (data.deletedCount > 0) {
@@ -92,7 +98,7 @@ const MyToys = () => {
 
 	const handleSort = (event) => {
 		fetch(
-			`http://localhost:5000/sort?by=${event.target.value}&email=${user.email}`
+			`https://ph-7-assignment-11-toy-sparkle-server.vercel.app/sort?by=${event.target.value}&email=${user.email}`
 		)
 			.then((res) => res.json())
 			.then((data) => setMyToys(data));
