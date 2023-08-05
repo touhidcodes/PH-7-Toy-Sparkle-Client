@@ -8,17 +8,17 @@ import Review from "../Review/Review";
 import useTitle from "../../../hooks/useTitle";
 
 const Home = () => {
-	const toys = useLoaderData();
-	useTitle("Home")
-	return (
-		<div>
-			<Banner />
-			<GallerySection />
-			<CategorySection toys={toys} />
-			<Featured />
-			<Review />
-		</div>
-	);
+  const toys = useLoaderData();
+  useTitle("Home");
+  return (
+    <div>
+      <Banner />
+      <GallerySection />
+      <CategorySection toys={toys} />
+      <Featured />
+      <Review />
+    </div>
+  );
 };
 
 export default Home;

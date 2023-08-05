@@ -18,7 +18,7 @@ const Banner = () => {
         <img src={banner3} className="w-full" />
         <div className="absolute flex items-center rounded-xl bg-gradient-to-r from-[#404258] to-[rgba(21, 21, 21, 0)] h-full w-full">
           <div className="text-white lg:ml-20 p-8 lg:p-0">
-            <h4 className=" text-4xl font-semibold bg-yellow-400 lg:w-56 p-4 text-center w-fit">
+            <h4 className=" text-4xl font-semibold bg-blue-400 lg:w-56 p-4 text-center w-fit">
               New Arrival
             </h4>
             <p className="text-5xl font-bold text-gray-200 mt-8 mb-7 ">
@@ -55,7 +55,7 @@ const Banner = () => {
         <img src={banner2} className="w-full" />
         <div className="absolute flex items-center rounded-xl bg-gradient-to-r from-[#404258] to-[rgba(21, 21, 21, 0)] h-full w-full">
           <div className="text-white lg:ml-20 p-8 lg:p-0 ">
-            <h4 className=" text-4xl font-semibold bg-yellow-400 lg:w-56 p-4 text-center w-fit">
+            <h4 className=" text-4xl font-semibold bg-blue-400 lg:w-56 p-4 text-center w-fit">
               New Arrival
             </h4>
 
@@ -93,7 +93,7 @@ const Banner = () => {
         <img src={banner1} className="w-full" />
         <div className="absolute flex items-center rounded-xl bg-gradient-to-r from-[#404258] to-[rgba(21, 21, 21, 0)] h-full w-full">
           <div className="text-white lg:ml-20 p-8 lg:p-0 ">
-            <h4 className=" text-4xl font-semibold bg-yellow-400 lg:w-56 p-4 text-center w-fit">
+            <h4 className=" text-4xl font-semibold bg-blue-400 lg:w-56 p-4 text-center w-fit">
               New Arrival
             </h4>
 
