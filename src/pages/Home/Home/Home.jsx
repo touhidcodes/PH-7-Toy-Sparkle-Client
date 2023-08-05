@@ -7,6 +7,7 @@ import Featured from "../Featured/Featured";
 import Review from "../Review/Review";
 import useTitle from "../../../hooks/useTitle";
 import Welcome from "../Welcome/Welcome";
+import FindMore from "../FindMore/FindMore";
 
 const Home = () => {
   const toys = useLoaderData();
@@ -15,9 +16,10 @@ const Home = () => {
     <div className="max-w-7xl mx-auto">
       <Banner />
       <Welcome />
-      <GallerySection />
       <CategorySection toys={toys} />
       <Featured />
+      <FindMore />
+      <GallerySection />
       <Review />
     </div>
   );
