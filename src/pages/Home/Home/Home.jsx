@@ -8,6 +8,7 @@ import Review from "../Review/Review";
 import useTitle from "../../../hooks/useTitle";
 import Welcome from "../Welcome/Welcome";
 import FindMore from "../FindMore/FindMore";
+import SpacialOffers from "../SpacialOffers/SpacialOffers";
 
 const Home = () => {
   const toys = useLoaderData();
@@ -19,6 +20,7 @@ const Home = () => {
       <CategorySection toys={toys} />
       <Featured />
       <FindMore />
+      <SpacialOffers />
       <GallerySection />
       <Review />
     </div>

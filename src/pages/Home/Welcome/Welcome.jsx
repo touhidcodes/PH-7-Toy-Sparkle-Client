@@ -5,12 +5,12 @@ import toyAnimation from "./toy.json";
 const Welcome = () => {
   return (
     <div className="mt-20 bg-gray-100 py-5">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-10">
         <div className="w-96 h-96 flex align-center">
           <Lottie animationData={toyAnimation} loop={true} />
         </div>
-        <div className="col-span-2 pr-20 flex flex-col justify-center">
-          <h1 className="text-2xl lg:text-7xl font-semibold text-gray-600">
+        <div className="col-span-2 lg:pr-20 flex flex-col justify-center px-10 text-center lg:text-start">
+          <h1 className="text-4xl lg:text-7xl font-semibold text-gray-600 ">
             Welcome to <br /> Toy Sparkle's
           </h1>
           <p className="mt-5 text-gray-500 lg:text-xl">
