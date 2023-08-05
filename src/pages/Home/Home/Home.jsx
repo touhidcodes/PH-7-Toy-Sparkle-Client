@@ -9,6 +9,7 @@ import useTitle from "../../../hooks/useTitle";
 import Welcome from "../Welcome/Welcome";
 import FindMore from "../FindMore/FindMore";
 import SpacialOffers from "../SpacialOffers/SpacialOffers";
+import Newsletter from "../Newsletter/Newsletter";
 
 const Home = () => {
   const toys = useLoaderData();
@@ -23,6 +24,7 @@ const Home = () => {
       <SpacialOffers />
       <GallerySection />
       <Review />
+      <Newsletter />
     </div>
   );
 };
