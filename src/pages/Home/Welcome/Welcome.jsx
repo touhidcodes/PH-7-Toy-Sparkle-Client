@@ -20,6 +20,9 @@ const Welcome = () => {
             wonderland filled with the latest toys from beloved brands and
             unique finds that spark creativity and imagination.
           </p>
+          <button className="btn btn-error text-white mt-5 w-60 text-xl">
+            Why Toy Sparkle?
+          </button>
         </div>
       </div>
     </div>
